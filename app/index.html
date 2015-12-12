@@ -76,23 +76,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <span class="paper-font-title">Menu</span>
         </paper-toolbar>
 
-        <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="{{baseUrl}}">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </a>
+        <typo3-module-menu attr-for-selected="data-route" selected="[[route]]">
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
+          <typo3-module-menu-group icon="chevron-left" name="Test">
+            <a data-route="home" href="{{baseUrl}}">
+              <paper-icon-item>
+                <iron-icon icon="home" item-icon></iron-icon>
+                Home
+              </paper-icon-item>
+            </a>
+            <a data-route="users" href="{{baseUrl}}users">
+              <paper-icon-item data-route="info">
+                <iron-icon icon="info" item-icon></iron-icon>
+                Users
+              </paper-icon-item>
+            </a>
+            <a data-route="contact" href="{{baseUrl}}contact">
+              <paper-icon-item data-route="contact">
+                <iron-icon icon="mail" item-icon></iron-icon>
+                Contact
+              </paper-icon-item>
+            </a>
+          </typo3-module-menu-group>
 
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-        </paper-menu>
+        </typo3-module-menu>
       </paper-scroll-header-panel>
 
       <!-- Main Area -->

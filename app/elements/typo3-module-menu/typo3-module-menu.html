@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/iron-menu-behavior/iron-menu-behavior.html">
+<link rel="import" href="typo3-module-menu-group.html">
+<dom-module id="typo3-module-menu">
+<template>
+  <style>
+    :host {
+      display: block;
+    }
+
+    ::content paper-icon-item {
+      cursor: pointer;
+    }
+  </style>
+  <content></content>
+</template>
+<script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'typo3-module-menu',
+
+      behaviors: [ Polymer.IronMenuBehavior ],
+
+      properties: {
+        selectable: {
+          type: String,
+          value: 'paper-icon-item'
+        }
+      },
+
+      // override selectable behavior to select all light dom children
+      _updateItems: function() {
+        var nodes = this.selectable
+            ? Polymer.dom(this).querySelectorAll(this.selectable)
+            : Polymer.dom(this).queryDistributedElements('*');
+        nodes = Array.prototype.filter.call(nodes, this._bindFilterItem);
+        this._setItems(nodes);
+      }
+    });
+
+  })();
+</script>
+</dom-module>

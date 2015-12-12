@@ -1,0 +1,84 @@
+<link rel="import" href="../../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<dom-module id="typo3-module-menu-group">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-icon-item {
+        cursor: pointer;
+      }
+
+      .open-state-indicator {
+        @apply(--layout-flex);
+        text-align: right;
+      }
+    </style>
+
+    <paper-icon-item class="" on-tap="toggle">
+      <iron-icon icon="[[icon]]" item-icon></iron-icon>
+      [[name]]
+      <div class="open-state-indicator">
+        <iron-icon icon="{{indicatorIconName(opened)}}"></iron-icon>
+      </div>
+    </paper-icon-item>
+
+    <iron-collapse id="collapse" opened="{{opened}}">
+      <content></content>
+    </iron-collapse>
+
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'typo3-module-menu-group',
+
+        properties: {
+          icon: {
+            type: String,
+            notify: true
+          },
+          name: {
+            type: String,
+            notify: true
+          },
+          opened: {
+            type: Boolean,
+            value: true,
+            notify: true
+          }
+        },
+
+        toggle: function() {
+          this.$.collapse.toggle();
+        },
+
+        open: function() {
+          this.$.collapse.open();
+        },
+
+        close: function() {
+          this.$.collapse.close();
+        },
+
+        indicatorIconName: function(opened) {
+          return opened ? 'arrow-drop-down' : 'arrow-drop-up';
+        },
+
+        _updateItems: function() {
+          var nodes = this.selectable
+              ? Polymer.dom(this).querySelectorAll(this.selectable)
+              : Polymer.dom(this).queryDistributedElements('*');
+          nodes = Array.prototype.filter.call(nodes, this._bindFilterItem);
+          this._setItems(nodes);
+        }
+      });
+
+    })();
+  </script>
+</dom-module>
