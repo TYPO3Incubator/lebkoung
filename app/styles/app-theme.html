@@ -43,17 +43,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* paper-menu */
     --paper-menu-background-color: #fff;
     --menu-link-color: #111111;
+    --paper-font-common-base: {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+    };
   }
 
   /* General styles */
+
+  #topBar {
+    --paper-toolbar-height: 48px;
+    --paper-toolbar-background: #111;
+    --paper-toolbar-color: #ddd;
+    --paper-toolbar-title: {
+      margin-right: 8px;
+      margin-left: 8px;
+      font-size: 12px;
+    };
+  }
+
+  #topBar paper-icon-button {
+    --paper-icon-button-ink-color: #fff;
+  }
+
+  #typo3Logo {
+    color: orange;
+  }
+
+  #paperDrawerPanel {
+    height: auto;
+    top: 48px;
+    bottom: 0;
+  }
+
+  #topBar, #drawerToolbar {
+    --paper-toolbar-content: {
+      padding: 0 8px;
+    };
+  }
 
   #drawerToolbar {
     color: var(--secondary-text-color);
     background-color: var(--drawer-menu-color);
     border-bottom: var(--drawer-toolbar-border-color);
-    --paper-toolbar-content: {
-      padding: 0 8px;
-    };
   }
 
   #drawerWidthSwitch {
