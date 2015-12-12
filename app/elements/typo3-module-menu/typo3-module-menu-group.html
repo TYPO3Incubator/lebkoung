@@ -32,7 +32,7 @@
 
   </template>
   <script>
-    (function () {
+    (function() {
       'use strict';
 
       Polymer({
@@ -68,14 +68,6 @@
 
         indicatorIconName: function(opened) {
           return opened ? 'arrow-drop-down' : 'arrow-drop-up';
-        },
-
-        _updateItems: function() {
-          var nodes = this.selectable
-              ? Polymer.dom(this).querySelectorAll(this.selectable)
-              : Polymer.dom(this).queryDistributedElements('*');
-          nodes = Array.prototype.filter.call(nodes, this._bindFilterItem);
-          this._setItems(nodes);
         }
       });
 

@@ -20,7 +20,7 @@
     Polymer({
       is: 'typo3-module-menu',
 
-      behaviors: [ Polymer.IronMenuBehavior ],
+      behaviors: [Polymer.IronMenuBehavior],
 
       properties: {
         selectable: {
@@ -31,9 +31,8 @@
 
       // override selectable behavior to select all light dom children
       _updateItems: function() {
-        var nodes = this.selectable
-            ? Polymer.dom(this).querySelectorAll(this.selectable)
-            : Polymer.dom(this).queryDistributedElements('*');
+        var $this = Polymer.dom(this);
+        var nodes = this.selectable ? $this.querySelectorAll(this.selectable) : $this.queryDistributedElements('*');
         nodes = Array.prototype.filter.call(nodes, this._bindFilterItem);
         this._setItems(nodes);
       }
