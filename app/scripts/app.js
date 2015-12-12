@@ -78,4 +78,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     app.$.paperDrawerPanel.closeDrawer();
   };
 
+  app.toggleDrawerWidth = function() {
+    let smallWidth = '56px';
+    let largeWidth = '256px';
+    let isLarge = app.$.paperDrawerPanel.drawerWidth === largeWidth;
+    app.$.drawerWidthSwitch.icon = isLarge ? 'chevron-right' : 'chevron-left';
+    app.$.paperDrawerPanel.responsiveWidth = isLarge ? '768px' : '968px';
+    app.$.paperDrawerPanel.drawerWidth = isLarge ? smallWidth : largeWidth;
+  };
+
 })(document);

@@ -51,6 +51,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     color: var(--secondary-text-color);
     background-color: var(--drawer-menu-color);
     border-bottom: var(--drawer-toolbar-border-color);
+    --paper-toolbar-content: {
+      padding: 0 8px;
+    };
+  }
+
+  #drawerWidthSwitch {
+    flex-shrink: 0;
+    margin-right: 8px;
   }
 
   paper-scroll-header-panel {
@@ -67,8 +75,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   }
 
   paper-menu iron-icon {
-    margin-right: 33px;
+    margin-right: 16px;
     opacity: 0.54;
+    flex-shrink: 0;
   }
 
   .paper-menu > .iron-selected {
