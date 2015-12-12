@@ -78,23 +78,56 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <typo3-module-menu attr-for-selected="data-route" selected="[[route]]">
 
-          <typo3-module-menu-group icon="chevron-left" name="Test">
+          <typo3-module-menu-group icon="chevron-left" name="Web">
             <a data-route="home" href="{{baseUrl}}">
               <paper-icon-item>
-                <iron-icon icon="home" item-icon></iron-icon>
-                Home
+                <iron-icon icon="typo3-module:module-page" item-icon></iron-icon>
+                Page
               </paper-icon-item>
             </a>
             <a data-route="users" href="{{baseUrl}}users">
               <paper-icon-item data-route="info">
-                <iron-icon icon="info" item-icon></iron-icon>
-                Users
+                <iron-icon icon="typo3-module:module-viewpage" item-icon></iron-icon>
+                View
               </paper-icon-item>
             </a>
             <a data-route="contact" href="{{baseUrl}}contact">
               <paper-icon-item data-route="contact">
-                <iron-icon icon="mail" item-icon></iron-icon>
-                Contact
+                <iron-icon icon="typo3-module:module-list" item-icon></iron-icon>
+                List
+              </paper-icon-item>
+            </a>
+            <a data-route="contact" href="{{baseUrl}}contact">
+              <paper-icon-item data-route="contact">
+                <iron-icon icon="typo3-module:module-workspaces" item-icon></iron-icon>
+                Workspaces
+              </paper-icon-item>
+            </a>
+            <a data-route="contact" href="{{baseUrl}}contact">
+              <paper-icon-item data-route="contact">
+                <iron-icon icon="typo3-module:module-info" item-icon></iron-icon>
+                Info
+              </paper-icon-item>
+            </a>
+            <a data-route="contact" href="{{baseUrl}}contact">
+              <paper-icon-item data-route="contact">
+                <iron-icon icon="typo3-module:module-func" item-icon></iron-icon>
+                Functions
+              </paper-icon-item>
+            </a>
+            <a data-route="contact" href="{{baseUrl}}contact">
+              <paper-icon-item data-route="contact">
+                <iron-icon icon="typo3-module:module-tstemplate" item-icon></iron-icon>
+                Template
+              </paper-icon-item>
+            </a>
+          </typo3-module-menu-group>
+
+          <typo3-module-menu-group icon="chevron-left" name="File">
+            <a data-route="home" href="{{baseUrl}}">
+              <paper-icon-item>
+                <iron-icon icon="typo3-module:module-filelist" item-icon></iron-icon>
+                Filelist
               </paper-icon-item>
             </a>
           </typo3-module-menu-group>
